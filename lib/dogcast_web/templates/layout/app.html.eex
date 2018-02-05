@@ -31,5 +31,10 @@
 
     </div> <!-- /container -->
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+    <script>
+      $(document).ready(function() {
+        console.log('shit')
+      });
+    </script>
   </body>
 </html>
