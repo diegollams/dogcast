@@ -1,4 +1,4 @@
-<h2>Listing posts</h2>
+<h2>Listing Posts</h2>
 
 <table class="table">
   <thead>
@@ -25,4 +25,4 @@
   </tbody>
 </table>
 
-<span><%= link "New post", to: post_path(@conn, :new) %></span>
+<span><%= link "New Post", to: post_path(@conn, :new) %></span>

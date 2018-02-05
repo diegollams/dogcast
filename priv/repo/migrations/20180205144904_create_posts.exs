@@ -1,4 +1,4 @@
-defmodule Dogcast.Repo.Migrations.CreatePost do
+defmodule Dogcast.Repo.Migrations.CreatePosts do
   use Ecto.Migration
 
   def change do
@@ -8,5 +8,6 @@ defmodule Dogcast.Repo.Migrations.CreatePost do
 
       timestamps()
     end
+
   end
 end
