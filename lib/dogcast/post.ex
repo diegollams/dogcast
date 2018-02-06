@@ -1,12 +1,13 @@
-defmodule Dogcast.DogcastWeb.Post do
+defmodule Dogcast.Post do
   use Ecto.Schema
   import Ecto.Changeset
-  alias Dogcast.DogcastWeb.Post
+  alias Dogcast.Post
 
 
   schema "posts" do
     field :body, :string
     field :title, :string
+    has_many :comments, Dogcast.Comment
 
     timestamps()
   end

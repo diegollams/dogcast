@@ -6,7 +6,7 @@ defmodule Dogcast.DogcastWeb do
   import Ecto.Query, warn: false
   alias Dogcast.Repo
 
-  alias Dogcast.DogcastWeb.Post
+  alias Dogcast.Post
 
   @doc """
   Returns the list of posts.
