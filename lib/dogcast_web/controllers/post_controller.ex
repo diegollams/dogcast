@@ -30,13 +30,13 @@ defmodule DogcastWeb.PostController do
   end
 
   def show(conn, %{"id" => id}) do
-    post = Repo.get(Post, id) |> Repo.preload([:comments])
-    changeset = Comment.changeset(%Comment{}, %{"content" => "Titulo"})
+    post      = Repo.get(Post, id) |> Repo.preload([:comments])
+    changeset = Comment.changeset(%Comment{}, %{})
     render(conn, "show.html", post: post, changeset: changeset)
   end
 
   def edit(conn, %{"id" => id}) do
-    post = DogcastWeb.get_post!(id)
+    post      = DogcastWeb.get_post!(id)
     changeset = DogcastWeb.change_post(post)
     render(conn, "edit.html", post: post, changeset: changeset)
   end
@@ -63,7 +63,9 @@ defmodule DogcastWeb.PostController do
       |> put_flash(:info, "Comment added.")
       |> redirect(to: post_path(conn, :show, post))
     else
-      render(conn, "show.html", post: post, changeset: changeset)
+      conn
+      |> put_flash(:info, "Comment not added.")
+      |> render(conn, "show.html", post: post, changeset: changeset)
     end
   end
 
